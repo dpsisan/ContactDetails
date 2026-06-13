@@ -82,5 +82,19 @@ while True:
         elif choice == 4:
             print("Exited Contacts. \n")
             break ## break is used 
+
+
+        elif choice == 5:
+         search = input("🔍 Enter name to search: ").lower()
+
+         found = False
+
+         for name, phone in contacts:
+           if search in name.lower():
+            print(f"{name} - {phone}")
+            found = True
+
+           if not found:
+            print("No contact found.")
         else:
          print("Invalid choice. Please select 1–4 only.\n")
