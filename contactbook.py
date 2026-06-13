@@ -25,7 +25,8 @@ while True:
         print("1. Add new contact")
         print("2. View saved contacts")
         print("3. Delete existing contact")
-        print("4. Exit \n")
+        print("4. Exit ")
+        print("5. Search existing contact \n")
 
 
         try:
@@ -94,7 +95,7 @@ while True:
             print(f"{name} - {phone}")
             found = True
 
-           if not found:
+        if not found:
             print("No contact found.")
         else:
-         print("Invalid choice. Please select 1–4 only.\n")
+         print("Invalid choice. Please select 1–5 only.\n")
