@@ -2,9 +2,17 @@
 
 contacts = []
 
+# try: this was a mistake cuz i need name and phone
+#     with open("ContactDetails.txt","r") as file:
+#        contacts= file.read().splitlines()
+# except FileNotFoundError:
+#     pass
+
 try:
-    with open("ContactDetails.txt","r") as file:
-       contacts= file.read().splitlines()
+    with open("ContactDetails.txt", "r") as file:
+        for line in file:
+            name, phone = line.strip().split(",")
+            contacts.append([name, phone])
 except FileNotFoundError:
     pass
 
@@ -29,10 +37,11 @@ while True:
             name = input("Name: ")
             phone = input("Phone: ")
             contacts.append([name,phone])
+            
             with open("ContactDetails.txt", "w") as file:
                  for name, phone in contacts:
                      file.write(f"{name},{phone}\n")
-
+            print("Task written successfully")
             
 
         elif choice == 2:
@@ -40,6 +49,8 @@ while True:
             for i , (name,phone) in enumerate (contacts, start =1):
 
              print(f"{i}. {name} - {phone}")
+
+
 
         elif choice == 3:
             print("\nYour Contact details are : \n")
@@ -64,12 +75,11 @@ while True:
                        file.write(f"{name},{phone}\n")
 
 
-
             else:
                 print("Enter valid number.\n")
 
         elif choice == 4:
-            print("Exit Contacts. \n")
+            print("Exited Contacts. \n")
             break ## break is used 
         else:
          print("Invalid choice. Please select 1–4 only.\n")
