@@ -97,4 +97,4 @@ while True:
            if not found:
             print("No contact found.")
         else:
-         print("Invalid choice. Please select 1–4 only.\n")
+         print("Invalid choice. Please select 1–5 only.\n")
