@@ -33,7 +33,7 @@ while True:
                  for name, phone in contacts:
                      file.write(f"{name},{phone}\n")
 
-            
+                     print("Task written successfully")
 
         elif choice == 2:
             print("Your Contact details are : \n")
